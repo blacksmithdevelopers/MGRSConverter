@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F925FC302098A50E000134F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925FC2F2098A50E000134F0 /* AppDelegate.swift */; };
+		F925FC322098A50E000134F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925FC312098A50E000134F0 /* ViewController.swift */; };
+		F925FC352098A50E000134F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F925FC332098A50E000134F0 /* Main.storyboard */; };
+		F925FC3A2098A50F000134F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F925FC382098A50F000134F0 /* LaunchScreen.storyboard */; };
+		F925FC432098A580000134F0 /* vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925FC422098A580000134F0 /* vector.swift */; };
+		F925FC452098B377000134F0 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925FC442098B377000134F0 /* Double+Extensions.swift */; };
+		F932AF18209D435600BDB9E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932AF17209D435600BDB9E5 /* MapViewController.swift */; };
+		F940C462209D40AA00352060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F940C461209D40AA00352060 /* Assets.xcassets */; };
+		F9422578209B5FD5005D4287 /* globe.PNG in Resources */ = {isa = PBXBuildFile; fileRef = F9422577209B5FD5005D4287 /* globe.PNG */; };
+		F949A4ED209953FE00B3F633 /* UTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949A4EC209953FE00B3F633 /* UTM.swift */; };
+		F949A4EF20995BAE00B3F633 /* LatLon+toUTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949A4EE20995BAE00B3F633 /* LatLon+toUTM.swift */; };
+		F949A4F1209A14F600B3F633 /* MGRS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949A4F0209A14F600B3F633 /* MGRS.swift */; };
+		F949A4F3209A28A000B3F633 /* UTM+toMGRS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949A4F2209A28A000B3F633 /* UTM+toMGRS.swift */; };
+		F949A4F5209A2F5400B3F633 /* String+toCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949A4F4209A2F5400B3F633 /* String+toCharacter.swift */; };
+		F949A4F7209A3BD900B3F633 /* String+getIntegerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949A4F6209A3BD900B3F633 /* String+getIntegerPosition.swift */; };
+		F9E59D9A2098D72D00CDB60A /* dms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E59D992098D72D00CDB60A /* dms.swift */; };
+		F9FECE172099135000805089 /* latlon-ellipsoidal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FECE162099135000805089 /* latlon-ellipsoidal.swift */; };
+		F9FECE192099186B00805089 /* ellipsoids.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FECE182099186B00805089 /* ellipsoids.swift */; };
+		F9FECE1B20991FBF00805089 /* datums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FECE1A20991FBF00805089 /* datums.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F925FC2C2098A50E000134F0 /* MGRS Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MGRS Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F925FC2F2098A50E000134F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F925FC312098A50E000134F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F925FC342098A50E000134F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F925FC392098A50F000134F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F925FC3B2098A50F000134F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F925FC422098A580000134F0 /* vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vector.swift; sourceTree = "<group>"; };
+		F925FC442098B377000134F0 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		F932AF17209D435600BDB9E5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F940C461209D40AA00352060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9422577209B5FD5005D4287 /* globe.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.PNG; sourceTree = "<group>"; };
+		F949A4EC209953FE00B3F633 /* UTM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTM.swift; sourceTree = "<group>"; };
+		F949A4EE20995BAE00B3F633 /* LatLon+toUTM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LatLon+toUTM.swift"; sourceTree = "<group>"; };
+		F949A4F0209A14F600B3F633 /* MGRS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGRS.swift; sourceTree = "<group>"; };
+		F949A4F2209A28A000B3F633 /* UTM+toMGRS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTM+toMGRS.swift"; sourceTree = "<group>"; };
+		F949A4F4209A2F5400B3F633 /* String+toCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+toCharacter.swift"; sourceTree = "<group>"; };
+		F949A4F6209A3BD900B3F633 /* String+getIntegerPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+getIntegerPosition.swift"; sourceTree = "<group>"; };
+		F9E59D992098D72D00CDB60A /* dms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dms.swift; sourceTree = "<group>"; };
+		F9FECE162099135000805089 /* latlon-ellipsoidal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "latlon-ellipsoidal.swift"; sourceTree = "<group>"; };
+		F9FECE182099186B00805089 /* ellipsoids.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ellipsoids.swift; sourceTree = "<group>"; };
+		F9FECE1A20991FBF00805089 /* datums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datums.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F925FC292098A50E000134F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F925FC232098A50E000134F0 = {
+			isa = PBXGroup;
+			children = (
+				F925FC2E2098A50E000134F0 /* MGRS Converter */,
+				F925FC2D2098A50E000134F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F925FC2D2098A50E000134F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F925FC2C2098A50E000134F0 /* MGRS Converter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F925FC2E2098A50E000134F0 /* MGRS Converter */ = {
+			isa = PBXGroup;
+			children = (
+				F925FC412098A533000134F0 /* Models */,
+				F925FC2F2098A50E000134F0 /* AppDelegate.swift */,
+				F925FC312098A50E000134F0 /* ViewController.swift */,
+				F940C461209D40AA00352060 /* Assets.xcassets */,
+				F925FC332098A50E000134F0 /* Main.storyboard */,
+				F932AF17209D435600BDB9E5 /* MapViewController.swift */,
+				F925FC382098A50F000134F0 /* LaunchScreen.storyboard */,
+				F925FC3B2098A50F000134F0 /* Info.plist */,
+				F9422577209B5FD5005D4287 /* globe.PNG */,
+			);
+			path = "MGRS Converter";
+			sourceTree = "<group>";
+		};
+		F925FC412098A533000134F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F925FC422098A580000134F0 /* vector.swift */,
+				F9FECE162099135000805089 /* latlon-ellipsoidal.swift */,
+				F9FECE182099186B00805089 /* ellipsoids.swift */,
+				F9FECE1A20991FBF00805089 /* datums.swift */,
+				F9E59D992098D72D00CDB60A /* dms.swift */,
+				F925FC442098B377000134F0 /* Double+Extensions.swift */,
+				F949A4EC209953FE00B3F633 /* UTM.swift */,
+				F949A4F0209A14F600B3F633 /* MGRS.swift */,
+				F949A4F6209A3BD900B3F633 /* String+getIntegerPosition.swift */,
+				F949A4F2209A28A000B3F633 /* UTM+toMGRS.swift */,
+				F949A4F4209A2F5400B3F633 /* String+toCharacter.swift */,
+				F949A4EE20995BAE00B3F633 /* LatLon+toUTM.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F925FC2B2098A50E000134F0 /* MGRS Converter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F925FC3E2098A50F000134F0 /* Build configuration list for PBXNativeTarget "MGRS Converter" */;
+			buildPhases = (
+				F925FC282098A50E000134F0 /* Sources */,
+				F925FC292098A50E000134F0 /* Frameworks */,
+				F925FC2A2098A50E000134F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MGRS Converter";
+			productName = "MGRS Converter";
+			productReference = F925FC2C2098A50E000134F0 /* MGRS Converter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F925FC242098A50E000134F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Blacksmith Developers";
+				TargetAttributes = {
+					F925FC2B2098A50E000134F0 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = F925FC272098A50E000134F0 /* Build configuration list for PBXProject "MGRS Converter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F925FC232098A50E000134F0;
+			productRefGroup = F925FC2D2098A50E000134F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F925FC2B2098A50E000134F0 /* MGRS Converter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F925FC2A2098A50E000134F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F925FC3A2098A50F000134F0 /* LaunchScreen.storyboard in Resources */,
+				F9422578209B5FD5005D4287 /* globe.PNG in Resources */,
+				F940C462209D40AA00352060 /* Assets.xcassets in Resources */,
+				F925FC352098A50E000134F0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F925FC282098A50E000134F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F925FC322098A50E000134F0 /* ViewController.swift in Sources */,
+				F9E59D9A2098D72D00CDB60A /* dms.swift in Sources */,
+				F949A4ED209953FE00B3F633 /* UTM.swift in Sources */,
+				F949A4F5209A2F5400B3F633 /* String+toCharacter.swift in Sources */,
+				F925FC302098A50E000134F0 /* AppDelegate.swift in Sources */,
+				F9FECE192099186B00805089 /* ellipsoids.swift in Sources */,
+				F925FC432098A580000134F0 /* vector.swift in Sources */,
+				F9FECE1B20991FBF00805089 /* datums.swift in Sources */,
+				F949A4F1209A14F600B3F633 /* MGRS.swift in Sources */,
+				F949A4F3209A28A000B3F633 /* UTM+toMGRS.swift in Sources */,
+				F949A4EF20995BAE00B3F633 /* LatLon+toUTM.swift in Sources */,
+				F949A4F7209A3BD900B3F633 /* String+getIntegerPosition.swift in Sources */,
+				F9FECE172099135000805089 /* latlon-ellipsoidal.swift in Sources */,
+				F932AF18209D435600BDB9E5 /* MapViewController.swift in Sources */,
+				F925FC452098B377000134F0 /* Double+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F925FC332098A50E000134F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F925FC342098A50E000134F0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F925FC382098A50F000134F0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F925FC392098A50F000134F0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F925FC3C2098A50F000134F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F925FC3D2098A50F000134F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F925FC3F2098A50F000134F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KG653N5ES4;
+				INFOPLIST_FILE = "MGRS Converter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BlackSmithDevelopers.MGRS-Converter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F925FC402098A50F000134F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KG653N5ES4;
+				INFOPLIST_FILE = "MGRS Converter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BlackSmithDevelopers.MGRS-Converter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F925FC272098A50E000134F0 /* Build configuration list for PBXProject "MGRS Converter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F925FC3C2098A50F000134F0 /* Debug */,
+				F925FC3D2098A50F000134F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F925FC3E2098A50F000134F0 /* Build configuration list for PBXNativeTarget "MGRS Converter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F925FC3F2098A50F000134F0 /* Debug */,
+				F925FC402098A50F000134F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F925FC242098A50E000134F0 /* Project object */;
+}

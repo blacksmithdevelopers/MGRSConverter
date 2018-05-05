@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RcS-YO-xEf">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calculate-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MGRS_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MGRS - Lat/Lon Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R58-T1-TOX">
+                                <rect key="frame" x="8" y="28" width="752" height="45.5"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Tkl-bt-2wW" userLabel="Vertical Stack Items">
+                                <rect key="frame" x="8" y="81.5" width="752" height="885.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wOO-VH-okO" userLabel="Horizontal Stack Inputs">
+                                        <rect key="frame" x="0.0" y="0.0" width="752" height="418"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="xHF-9k-Tj7" userLabel="MGRS Input">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="418"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter MGRS Coordinate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckO-3m-JQg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="25.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KBm-nR-teb">
+                                                        <rect key="frame" x="0.0" y="33.5" width="366" height="33"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="NoG-e1-ESn"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinates Entered" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mw-ff-XD6">
+                                                        <rect key="frame" x="0.0" y="74.5" width="366" height="25.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="coords go in here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2K-Gi-HTC">
+                                                        <rect key="frame" x="0.0" y="111" width="366" height="27.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R71-MK-2du">
+                                                        <rect key="frame" x="0.0" y="378" width="366" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <state key="normal" title="Convert MGRS to Lat/Lon"/>
+                                                        <connections>
+                                                            <action selector="convertToLatLon" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJS-lY-Isb"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="KBm-nR-teb" firstAttribute="top" secondItem="ckO-3m-JQg" secondAttribute="bottom" constant="8" id="Ijk-7t-GwI"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Qaw-e4-jIo" userLabel="Lat Lon Input">
+                                                <rect key="frame" x="386" y="0.0" width="366" height="418"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Latitude (N or S Coordinate)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umi-ml-FOK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="25.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1u-Zk-rc9">
+                                                        <rect key="frame" x="0.0" y="33.5" width="366" height="33"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="bAR-rG-SjD"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Longitude (W or E Coordinate)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ng-bN-dl3">
+                                                        <rect key="frame" x="0.0" y="74.5" width="366" height="25.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cht-bX-ysP">
+                                                        <rect key="frame" x="0.0" y="108" width="366" height="33"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="uvr-9q-Yxm"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinates Entered" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i5-V6-Y34">
+                                                        <rect key="frame" x="0.0" y="149" width="366" height="25.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="coords here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pq-dP-cJC">
+                                                        <rect key="frame" x="0.0" y="185.5" width="366" height="27.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVQ-Jx-q95" userLabel="submit Lat Lon Convert">
+                                                        <rect key="frame" x="0.0" y="378" width="366" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <state key="normal" title="Convert Lat/Lon to MGRS"/>
+                                                        <connections>
+                                                            <action selector="convertToMGRS" destination="BYZ-38-t0r" eventType="touchUpInside" id="Upy-0U-nzM"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="3ng-bN-dl3" firstAttribute="top" secondItem="F1u-Zk-rc9" secondAttribute="bottom" constant="8" id="Oy9-bm-Gsa"/>
+                                                    <constraint firstItem="3ng-bN-dl3" firstAttribute="top" secondItem="F1u-Zk-rc9" secondAttribute="bottom" constant="8" id="Une-YS-9WQ"/>
+                                                    <constraint firstItem="F1u-Zk-rc9" firstAttribute="top" secondItem="umi-ml-FOK" secondAttribute="bottom" constant="8" id="e9M-PA-d0U"/>
+                                                    <constraint firstItem="F1u-Zk-rc9" firstAttribute="top" secondItem="umi-ml-FOK" secondAttribute="bottom" constant="8" id="j8Z-Po-ps2"/>
+                                                    <constraint firstItem="cht-bX-ysP" firstAttribute="top" secondItem="3ng-bN-dl3" secondAttribute="bottom" constant="8" id="umO-fV-GQs"/>
+                                                    <constraint firstItem="cht-bX-ysP" firstAttribute="top" secondItem="3ng-bN-dl3" secondAttribute="bottom" constant="8" id="yvy-gV-zt7"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="xHF-9k-Tj7" firstAttribute="width" secondItem="Qaw-e4-jIo" secondAttribute="width" id="ntO-49-QyX"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XJF-wN-g6c" userLabel="Vertical Stack Results">
+                                        <rect key="frame" x="0.0" y="468" width="752" height="417.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="oMR-TD-YA3">
+                                                <rect key="frame" x="0.0" y="0.0" width="752" height="210"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversion Requested" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0S-RX-7sU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="752" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="conversion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUC-po-r71">
+                                                        <rect key="frame" x="0.0" y="60" width="752" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Coordinates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUJ-TB-vmV">
+                                                        <rect key="frame" x="0.0" y="120" width="752" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="coordinates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vil-yp-lF7">
+                                                        <rect key="frame" x="0.0" y="180" width="752" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnI-1p-p7f">
+                                                <rect key="frame" x="318" y="240.5" width="116" height="21.5"/>
+                                                <state key="normal" image="icons8-map_pin">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="See on Map">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system" size="18"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="pTf-xf-KGp" kind="show" identifier="seeCoordsOnMap" id="sHa-zj-evX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syH-uP-2B5">
+                                                <rect key="frame" x="310.5" y="377.5" width="131" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <state key="normal" title="Clear Results"/>
+                                                <connections>
+                                                    <action selector="clearResults" destination="BYZ-38-t0r" eventType="touchUpInside" id="72f-K2-w9N"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="oMR-TD-YA3" firstAttribute="leading" secondItem="XJF-wN-g6c" secondAttribute="leading" id="67K-la-UZi"/>
+                                            <constraint firstAttribute="trailing" secondItem="oMR-TD-YA3" secondAttribute="trailing" id="NgG-5V-vYJ"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XJF-wN-g6c" firstAttribute="height" secondItem="wOO-VH-okO" secondAttribute="height" id="fY2-e6-5Yx"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="R58-T1-TOX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ODt-aY-Lf1"/>
+                            <constraint firstItem="R58-T1-TOX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="PeM-cy-SiC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tkl-bt-2wW" secondAttribute="bottom" constant="8" id="RsF-US-aF2"/>
+                            <constraint firstItem="Tkl-bt-2wW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="fOW-b4-9wQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R58-T1-TOX" secondAttribute="trailing" constant="8" id="gqV-4P-guA"/>
+                            <constraint firstItem="Tkl-bt-2wW" firstAttribute="top" secondItem="R58-T1-TOX" secondAttribute="bottom" constant="8" id="qQV-49-EQy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tkl-bt-2wW" secondAttribute="trailing" constant="8" id="tkq-0P-58H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Calculate" image="calculator_icon" id="8LY-Ia-fwX"/>
+                    <connections>
+                        <outlet property="clearButton" destination="syH-uP-2B5" id="4ow-xb-3U5"/>
+                        <outlet property="conversionDisplay" destination="WUC-po-r71" id="p2g-kr-cfQ"/>
+                        <outlet property="conversionLabel" destination="a0S-RX-7sU" id="ymU-Af-qrQ"/>
+                        <outlet property="latEnteredText" destination="F1u-Zk-rc9" id="M1U-8R-PST"/>
+                        <outlet property="latlonCoordsDisplayedLabel" destination="8Pq-dP-cJC" id="1qD-b0-mge"/>
+                        <outlet property="latlonCoordsEnteredLabel" destination="7i5-V6-Y34" id="joW-Mn-Eqd"/>
+                        <outlet property="lonEnteredText" destination="cht-bX-ysP" id="Uzp-Eb-VTg"/>
+                        <outlet property="mgrsCoordsDisplayedLabel" destination="d2K-Gi-HTC" id="aVC-k4-kh5"/>
+                        <outlet property="mgrsCoordsEnteredLabel" destination="1mw-ff-XD6" id="0Jd-0Q-Iig"/>
+                        <outlet property="mgrsEnteredText" destination="KBm-nR-teb" id="hte-UG-PCq"/>
+                        <outlet property="newCoordsDisplay" destination="Vil-yp-lF7" id="6bN-8V-3tL"/>
+                        <outlet property="newCoordsLabel" destination="bUJ-TB-vmV" id="pQW-J7-P1p"/>
+                        <outlet property="seeOnMapButton" destination="JnI-1p-p7f" id="BT1-K5-8pH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1490" y="710"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="foV-sM-yyz">
+            <objects>
+                <viewController storyboardIdentifier="sbMapView" id="pTf-xf-KGp" customClass="MapViewController" customModule="MGRS_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zRm-kN-kOz">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CIq-Pi-mSp">
+                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="pTf-xf-KGp" id="Cfm-Ik-RKC"/>
+                                    <outletCollection property="gestureRecognizers" destination="Iwb-30-ab4" appends="YES" id="Mza-jN-Inu"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="latLonLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ad8-g3-EDp">
+                                <rect key="frame" x="10" y="967" width="194.5" height="47"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mgrsLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgF-I1-24C">
+                                <rect key="frame" x="563.5" y="967" width="194.5" height="47"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="huc-5q-ZP1" firstAttribute="bottom" secondItem="dgF-I1-24C" secondAttribute="bottom" constant="10" id="I1R-jn-HaP"/>
+                            <constraint firstItem="ad8-g3-EDp" firstAttribute="height" secondItem="dgF-I1-24C" secondAttribute="height" id="Ipk-zD-RIo"/>
+                            <constraint firstItem="huc-5q-ZP1" firstAttribute="bottom" secondItem="CIq-Pi-mSp" secondAttribute="bottom" id="Ors-Ct-4E9"/>
+                            <constraint firstItem="huc-5q-ZP1" firstAttribute="trailing" secondItem="dgF-I1-24C" secondAttribute="trailing" constant="10" id="PgP-8Z-aU2"/>
+                            <constraint firstItem="ad8-g3-EDp" firstAttribute="width" secondItem="dgF-I1-24C" secondAttribute="width" id="Xhw-y9-Kmv"/>
+                            <constraint firstItem="CIq-Pi-mSp" firstAttribute="top" secondItem="huc-5q-ZP1" secondAttribute="top" id="Xpx-89-au5"/>
+                            <constraint firstItem="huc-5q-ZP1" firstAttribute="bottom" secondItem="ad8-g3-EDp" secondAttribute="bottom" constant="10" id="c3q-hF-5Z6"/>
+                            <constraint firstItem="dgF-I1-24C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ad8-g3-EDp" secondAttribute="trailing" constant="20" id="dWM-dh-G3o"/>
+                            <constraint firstItem="ad8-g3-EDp" firstAttribute="leading" secondItem="huc-5q-ZP1" secondAttribute="leading" constant="10" id="iuL-29-VAK"/>
+                            <constraint firstItem="CIq-Pi-mSp" firstAttribute="leading" secondItem="huc-5q-ZP1" secondAttribute="leading" id="wgs-2d-9qE"/>
+                            <constraint firstItem="huc-5q-ZP1" firstAttribute="trailing" secondItem="CIq-Pi-mSp" secondAttribute="trailing" id="x44-no-5KP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="huc-5q-ZP1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="icons8-map_editing-1" id="XpV-4o-0lZ"/>
+                    <connections>
+                        <outlet property="latLonLabel" destination="ad8-g3-EDp" id="Mdq-72-OgC"/>
+                        <outlet property="mapView" destination="CIq-Pi-mSp" id="oi3-VN-4Pz"/>
+                        <outlet property="mgrsLabel" destination="dgF-I1-24C" id="t5D-ov-V7p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q3y-fM-rRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Iwb-30-ab4">
+                    <connections>
+                        <action selector="captureUserPressedLocationWithSender:" destination="pTf-xf-KGp" id="nkU-BA-CZy"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1490" y="1397"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Zfx-mY-NZr">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="RcS-YO-xEf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0MJ-cW-F5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9Ss-ol-A6B"/>
+                        <segue destination="pTf-xf-KGp" kind="relationship" relationship="viewControllers" id="RdC-9v-lAk"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4j-Wk-G8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533.59375" y="718.9453125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calculator_icon" width="25" height="25"/>
+        <image name="icons8-map_editing-1" width="25" height="25"/>
+        <image name="icons8-map_pin" width="20" height="20"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sHa-zj-evX"/>
+    </inferredMetricsTieBreakers>
+</document>
