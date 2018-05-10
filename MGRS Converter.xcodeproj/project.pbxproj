@@ -22,6 +22,7 @@
 		F949A4F3209A28A000B3F633 /* UTM+toMGRS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949A4F2209A28A000B3F633 /* UTM+toMGRS.swift */; };
 		F949A4F5209A2F5400B3F633 /* String+toCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949A4F4209A2F5400B3F633 /* String+toCharacter.swift */; };
 		F949A4F7209A3BD900B3F633 /* String+getIntegerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949A4F6209A3BD900B3F633 /* String+getIntegerPosition.swift */; };
+		F98F81D9209E4A480094B4C0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98F81D8209E4A480094B4C0 /* MapKit.framework */; };
 		F9E59D9A2098D72D00CDB60A /* dms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E59D992098D72D00CDB60A /* dms.swift */; };
 		F9FECE172099135000805089 /* latlon-ellipsoidal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FECE162099135000805089 /* latlon-ellipsoidal.swift */; };
 		F9FECE192099186B00805089 /* ellipsoids.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FECE182099186B00805089 /* ellipsoids.swift */; };
@@ -46,6 +47,7 @@
 		F949A4F2209A28A000B3F633 /* UTM+toMGRS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTM+toMGRS.swift"; sourceTree = "<group>"; };
 		F949A4F4209A2F5400B3F633 /* String+toCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+toCharacter.swift"; sourceTree = "<group>"; };
 		F949A4F6209A3BD900B3F633 /* String+getIntegerPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+getIntegerPosition.swift"; sourceTree = "<group>"; };
+		F98F81D8209E4A480094B4C0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F9E59D992098D72D00CDB60A /* dms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dms.swift; sourceTree = "<group>"; };
 		F9FECE162099135000805089 /* latlon-ellipsoidal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "latlon-ellipsoidal.swift"; sourceTree = "<group>"; };
 		F9FECE182099186B00805089 /* ellipsoids.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ellipsoids.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98F81D9209E4A480094B4C0 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +71,7 @@
 			children = (
 				F925FC2E2098A50E000134F0 /* MGRS Converter */,
 				F925FC2D2098A50E000134F0 /* Products */,
+				F98F81D7209E4A480094B4C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +118,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F98F81D7209E4A480094B4C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F98F81D8209E4A480094B4C0 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +158,11 @@
 				TargetAttributes = {
 					F925FC2B2098A50E000134F0 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -355,7 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BlackSmithDevelopers.MGRS-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -374,7 +391,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BlackSmithDevelopers.MGRS-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

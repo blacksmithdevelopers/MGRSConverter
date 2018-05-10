@@ -271,28 +271,58 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwx-ba-jyj" userLabel="showUserLocation">
+                                <rect key="frame" x="50" y="70" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="snK-Lg-UJ0"/>
+                                    <constraint firstAttribute="height" constant="50" id="xjH-y0-Ev3"/>
+                                </constraints>
+                                <state key="normal" image="icons8-street_view_filled"/>
+                                <connections>
+                                    <action selector="centerViewOnUserPosition:" destination="pTf-xf-KGp" eventType="touchUpInside" id="vH9-CV-wrF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hv-nN-f2g">
+                                <rect key="frame" x="50" y="140" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OG9-zG-bxK"/>
+                                    <constraint firstAttribute="width" constant="50" id="hBq-hZ-vOQ"/>
+                                </constraints>
+                                <state key="normal" image="icons8-cancel_filled"/>
+                                <connections>
+                                    <action selector="clearMapMarks:" destination="pTf-xf-KGp" eventType="touchUpInside" id="0p1-sN-kLb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Qwx-ba-jyj" firstAttribute="top" secondItem="huc-5q-ZP1" secondAttribute="top" constant="50" id="A5h-r3-odG"/>
                             <constraint firstItem="huc-5q-ZP1" firstAttribute="bottom" secondItem="dgF-I1-24C" secondAttribute="bottom" constant="10" id="I1R-jn-HaP"/>
                             <constraint firstItem="ad8-g3-EDp" firstAttribute="height" secondItem="dgF-I1-24C" secondAttribute="height" id="Ipk-zD-RIo"/>
                             <constraint firstItem="huc-5q-ZP1" firstAttribute="bottom" secondItem="CIq-Pi-mSp" secondAttribute="bottom" id="Ors-Ct-4E9"/>
                             <constraint firstItem="huc-5q-ZP1" firstAttribute="trailing" secondItem="dgF-I1-24C" secondAttribute="trailing" constant="10" id="PgP-8Z-aU2"/>
+                            <constraint firstItem="Qwx-ba-jyj" firstAttribute="leading" secondItem="huc-5q-ZP1" secondAttribute="leading" constant="50" id="W7p-dU-o5K"/>
                             <constraint firstItem="ad8-g3-EDp" firstAttribute="width" secondItem="dgF-I1-24C" secondAttribute="width" id="Xhw-y9-Kmv"/>
                             <constraint firstItem="CIq-Pi-mSp" firstAttribute="top" secondItem="huc-5q-ZP1" secondAttribute="top" id="Xpx-89-au5"/>
                             <constraint firstItem="huc-5q-ZP1" firstAttribute="bottom" secondItem="ad8-g3-EDp" secondAttribute="bottom" constant="10" id="c3q-hF-5Z6"/>
                             <constraint firstItem="dgF-I1-24C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ad8-g3-EDp" secondAttribute="trailing" constant="20" id="dWM-dh-G3o"/>
                             <constraint firstItem="ad8-g3-EDp" firstAttribute="leading" secondItem="huc-5q-ZP1" secondAttribute="leading" constant="10" id="iuL-29-VAK"/>
+                            <constraint firstItem="3hv-nN-f2g" firstAttribute="leading" secondItem="huc-5q-ZP1" secondAttribute="leading" constant="50" id="lg2-de-NOr"/>
                             <constraint firstItem="CIq-Pi-mSp" firstAttribute="leading" secondItem="huc-5q-ZP1" secondAttribute="leading" id="wgs-2d-9qE"/>
+                            <constraint firstItem="3hv-nN-f2g" firstAttribute="top" secondItem="Qwx-ba-jyj" secondAttribute="bottom" constant="20" id="wqQ-7j-yNe"/>
                             <constraint firstItem="huc-5q-ZP1" firstAttribute="trailing" secondItem="CIq-Pi-mSp" secondAttribute="trailing" id="x44-no-5KP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="huc-5q-ZP1"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="icons8-map_editing-1" id="XpV-4o-0lZ"/>
                     <connections>
+                        <outlet property="clearMapButton" destination="3hv-nN-f2g" id="khp-jY-Lhr"/>
                         <outlet property="latLonLabel" destination="ad8-g3-EDp" id="Mdq-72-OgC"/>
                         <outlet property="mapView" destination="CIq-Pi-mSp" id="oi3-VN-4Pz"/>
                         <outlet property="mgrsLabel" destination="dgF-I1-24C" id="t5D-ov-V7p"/>
+                        <outlet property="showLocationButton" destination="Qwx-ba-jyj" id="375-Vv-eNH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q3y-fM-rRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -302,7 +332,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1490" y="1397"/>
+            <point key="canvasLocation" x="1489.84375" y="1396.875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Zfx-mY-NZr">
@@ -326,8 +356,10 @@
     </scenes>
     <resources>
         <image name="calculator_icon" width="25" height="25"/>
+        <image name="icons8-cancel_filled" width="25" height="25"/>
         <image name="icons8-map_editing-1" width="25" height="25"/>
         <image name="icons8-map_pin" width="20" height="20"/>
+        <image name="icons8-street_view_filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sHa-zj-evX"/>
