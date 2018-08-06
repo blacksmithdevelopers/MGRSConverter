@@ -255,7 +255,7 @@ public struct LatLon : CustomStringConvertible {
             regex = try! NSRegularExpression(pattern: "[Ww]$")
             changes = regex.stringByReplacingMatches(in: strLon, options: [], range: range, withTemplate: "")
             if (strLon.count != changes.count){
-                changes = "\(changes.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)) S"
+                changes = "\(changes.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)) W"
                 matchFound = true
             }
         }
