@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct Datum : Equatable {
-    let name: String
-    let ellipsoid: Ellipsoid
-    let transform: Transform
+public struct Datum : Equatable {
+    public let name: String
+    public let ellipsoid: Ellipsoid
+    public let transform: Transform
     
-    static func ==(lhs: Datum, rhs: Datum) -> Bool {
+    public static func ==(lhs: Datum, rhs: Datum) -> Bool {
         return (lhs.ellipsoid == rhs.ellipsoid) && (lhs.name == rhs.name) && (lhs.transform == rhs.transform)
     }
 }
 
-struct Transform: Equatable{
+public struct Transform: Equatable{
     let tx: Double
     let ty: Double
     let tz: Double
@@ -27,12 +27,12 @@ struct Transform: Equatable{
     let ry: Double
     let rz: Double
     
-    static func ==(lhs: Transform, rhs: Transform) -> Bool {
+    public static func ==(lhs: Transform, rhs: Transform) -> Bool {
         return (lhs.tx == rhs.tx) && (lhs.ty == rhs.ty) && (lhs.tz == rhs.tz) && (lhs.s == rhs.s) && (lhs.tx == rhs.tx) && (lhs.ty == rhs.ty) && (lhs.tz == rhs.tz)
     }
 }
 
-struct Datums{
+public struct Datums{
     let datums: [Datum]
     static let wgs84 = "WGS84"
     init(){
@@ -62,8 +62,8 @@ struct Datums{
     }
 }
 
-struct DatumFinder {
-    static func getDatum(desiredDatum target: Datum) -> Datum {
+public struct DatumFinder {
+    public static func getDatum(desiredDatum target: Datum) -> Datum {
         let store = Datums().datums
         if (store.contains(target)){
             return target

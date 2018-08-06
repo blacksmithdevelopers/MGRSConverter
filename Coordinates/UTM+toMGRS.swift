@@ -10,7 +10,7 @@ import Foundation
 
 extension Utm {
     
-    func toMGRS() throws -> Mgrs{
+    public func toMGRS() throws -> Mgrs{
         let zone = self.zone
         let latLon = self.toLatLonE()
         let mgrsLatBands = Mgrs.latBands

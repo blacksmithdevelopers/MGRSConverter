@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Hemisphere : String {
+public enum Hemisphere : String {
     case n = "N"
     case s = "S"
     static func Hemisphere(_ val: String) -> Hemisphere?{
@@ -27,7 +27,7 @@ enum Hemisphere : String {
     }
 }
 
-enum UtmError: Error {
+public enum UtmError: Error {
     case badLatLon(String)
     case badString(String)
     case invalidEasting(String)
@@ -35,7 +35,7 @@ enum UtmError: Error {
     case invalidZone(String)
 }
 
-struct Utm: CustomStringConvertible{
+public struct Utm: CustomStringConvertible{
     
     private let wgs84Datum : Datum
     private let datumStore: [Datum]
@@ -47,11 +47,11 @@ struct Utm: CustomStringConvertible{
         }
     }
     
-    var description: String {
+    public var description: String {
         return toString()
     }
     
-    var zone: Int {
+    public var zone: Int {
         didSet (oldValue) {
             if zone < 0 || zone > 60 {
                 zone = oldValue
@@ -74,11 +74,11 @@ struct Utm: CustomStringConvertible{
             }
         }
     }
-    var datum: Datum
+    public var datum: Datum
     var convergence: Double?
     var scale: Double?
     
-    init(zone: Int, hemisphere: Hemisphere, easting: Double, northing: Double, datum: Datum, convergence: Double? = nil, scale: Double? = nil) throws {
+    public init(zone: Int, hemisphere: Hemisphere, easting: Double, northing: Double, datum: Datum, convergence: Double? = nil, scale: Double? = nil) throws {
         guard 120e3 <= easting && easting <= 880e3 else {
             throw UtmError.invalidEasting("Invalid Easting provided. Easting must be between 120,000 and 880,000")
         }
@@ -100,7 +100,7 @@ struct Utm: CustomStringConvertible{
         self.datum = getDatum(targetDatum: datum)
     }
     
-    func toLatLonE() -> LatLon {
+    public func toLatLonE() -> LatLon {
         let z = self.zone
         let h = self.hemisphere
         var x = self.easting
@@ -206,12 +206,12 @@ struct Utm: CustomStringConvertible{
         return LatLon(lat: lat, lon: lon, datum: self.datum)
     }
     
-    static func parseUTM(utmCoord: String) throws -> Utm{
+    public static func parseUTM(utmCoord: String) throws -> Utm{
         let wgsDatum = Datums().datums.filter {$0.name == Datums.wgs84}.first!
         return try parseUTM(utmCoord: utmCoord, datum: wgsDatum)
     }
     
-     static func parseUTM(utmCoord: String, datum: Datum) throws -> Utm{
+    public static func parseUTM(utmCoord: String, datum: Datum) throws -> Utm{
         let foundDatum = DatumFinder.getDatum(desiredDatum: datum)
         var utm = utmCoord// "31 N 448251 5411932"
         let regex = try! NSRegularExpression(pattern: "\\S+")
@@ -237,10 +237,11 @@ struct Utm: CustomStringConvertible{
         return try Utm(zone: zone, hemisphere: hemisphere, easting: easting, northing: northing, datum: foundDatum)
     }
     
-    func toString() -> String{
+    public func toString() -> String{
         return toString(precision: 0)
     }
-    func toString(precision: UInt) -> String{
+    
+    public func toString(precision: UInt) -> String{
         let z = self.zone < 10 ? "0\(self.zone)" : "\(self.zone)"
         let h = self.hemisphere == .n ? "N" : "S"
         let e = String(format: "%.0f", self.easting.toFixed(precision))

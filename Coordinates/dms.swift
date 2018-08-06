@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum DMSFormat{
+public enum DMSFormat{
     case degrees
     case degreesMinutes
     case degreesMinutesSeconds
 }
-enum DMS {
-    static func castToDouble(_ data: String) -> Double {
+public enum DMS {
+    public static func castToDouble(_ data: String) -> Double {
         if let data = Double(data){
             return data
         } else{
@@ -31,7 +31,7 @@ enum DMS {
         }
     }
     
-    static func parseDMS(degMinSec: String) -> Double {
+    public static func parseDMS(degMinSec: String) -> Double {
         if let parsed = Double(degMinSec) {
             return parsed
         }
@@ -83,7 +83,7 @@ enum DMS {
         return deg
     }
     
-    static func toDMS(deg: Double, format: DMSFormat, decimalPlaces: UInt) -> String{
+    public static func toDMS(deg: Double, format: DMSFormat, decimalPlaces: UInt) -> String{
         let degrees: Double
         let dp = Int(decimalPlaces)
         let roundingNumber = Double(truncating: pow(10, dp) as NSNumber)
@@ -135,25 +135,25 @@ enum DMS {
         return dms
     }
     
-    static func toLat(deg : Double, format: DMSFormat, decimalPlaces: UInt) -> String{
+    public static func toLat(deg : Double, format: DMSFormat, decimalPlaces: UInt) -> String{
         var lat = toDMS(deg: deg, format: format, decimalPlaces: decimalPlaces)
         lat = String(lat[lat.index(lat.startIndex, offsetBy: 1)..<lat.endIndex])
         return "\(deg < 0 ? "S" : "N") \(lat)"
     }
     
-    static func toLon(deg: Double, format: DMSFormat, decimalPlaces: UInt) -> String{
+    public static func toLon(deg: Double, format: DMSFormat, decimalPlaces: UInt) -> String{
         let lon = toDMS(deg: deg, format: format, decimalPlaces: decimalPlaces)
         return "\(deg < 0 ? "W" : "E") \(lon)"
     }
     
-    static func toBrng(deg: Double, format: DMSFormat, decimalPlaces: UInt) -> String{
+    public static func toBrng(deg: Double, format: DMSFormat, decimalPlaces: UInt) -> String{
         let degrees = (deg + 360).truncatingRemainder(dividingBy: 360)
         var brng = toDMS(deg: degrees, format: format, decimalPlaces: decimalPlaces)
         brng = brng.replacingOccurrences(of: "360", with: "0")
         return brng
     }
     
-    static func compassPoint(bearing: Double, precision: UInt) -> String{
+    public static func compassPoint(bearing: Double, precision: UInt) -> String{
         let dp = Int(precision)
         let brng = (bearing.truncatingRemainder(dividingBy: 360) + 360).truncatingRemainder(dividingBy: 360)
         

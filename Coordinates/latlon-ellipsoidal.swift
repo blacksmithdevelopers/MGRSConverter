@@ -8,22 +8,22 @@
 
 import Foundation
 
-enum LatLonError: Error{
+public enum LatLonError: Error{
     case parseError(String)
 }
 
-struct LatLon : CustomStringConvertible {
+public struct LatLon : CustomStringConvertible {
     
-    var description: String {
+    public var description: String {
         return self.toString(format: .degreesMinutesSeconds, decimalPlaces: 4)
     }
-    var lat: Double
-    var lon: Double
-    var datum: Datum
+    public var lat: Double
+    public var lon: Double
+    public var datum: Datum
     private let wgs84Datum : Datum
     private let datumStore: [Datum]
     
-    init(lat: Double, lon: Double, datum: Datum) {
+    public init(lat: Double, lon: Double, datum: Datum) {
         datumStore = Datums().datums
         self.lat = lat
         self.lon = lon
@@ -32,7 +32,7 @@ struct LatLon : CustomStringConvertible {
         self.datum = getDatum(targetDatum: datum)
     }
     
-    init(lat: Double, lon: Double){
+    public init(lat: Double, lon: Double){
         datumStore = Datums().datums
         self.lat = lat
         self.lon = lon
@@ -41,13 +41,13 @@ struct LatLon : CustomStringConvertible {
         self.datum = getDatum(targetDatum: datum)
     }
     
-    func toString(format: DMSFormat, decimalPlaces: UInt, newLinesForEachCoord: Bool) -> String{
+    public func toString(format: DMSFormat, decimalPlaces: UInt, newLinesForEachCoord: Bool) -> String{
         
         
         return "\(DMS.toLat(deg: self.lat, format: format, decimalPlaces: decimalPlaces)), \(newLinesForEachCoord ? "\n" : "")\(DMS.toLon(deg: self.lon, format: format, decimalPlaces: decimalPlaces))"
     }
     
-    func toString(format: DMSFormat, decimalPlaces: UInt) -> String {
+    public func toString(format: DMSFormat, decimalPlaces: UInt) -> String {
         return self.toString(format: format, decimalPlaces: decimalPlaces, newLinesForEachCoord: false)
     }
     
@@ -59,7 +59,7 @@ struct LatLon : CustomStringConvertible {
         }
     }
     
-    mutating func convertDatum(toDatum: Datum) -> LatLon{
+    public mutating func convertDatum(toDatum: Datum) -> LatLon{
         let target = getDatum(targetDatum: toDatum)
         var transform: Transform? = nil
         
@@ -85,7 +85,7 @@ struct LatLon : CustomStringConvertible {
         return newLatLon
     }
     
-    func toCartesian() -> Vector {
+    public func toCartesian() -> Vector {
         let ɸ = self.lat.toRadians()
         let λ = self.lon.toRadians()
         let h = 0.0 //height above ellipsoid, this is not currently used
@@ -107,7 +107,7 @@ struct LatLon : CustomStringConvertible {
         return Vector(x: x, y: y, z: z)
     }
     
-    func makeLatLonE(vector point:Vector, datum ref: Datum) -> LatLon{
+    public func makeLatLonE(vector point:Vector, datum ref: Datum) -> LatLon{
         let x = point.x
         let y = point.y
         let z = point.z
@@ -137,7 +137,7 @@ struct LatLon : CustomStringConvertible {
         return LatLon(lat: ɸ.toDegrees(), lon: λ.toDegrees(), datum: ref)
     }
     
-    func applyTransform(point: Vector, transform: Transform) -> Vector {
+    public func applyTransform(point: Vector, transform: Transform) -> Vector {
         let x1 = point.x
         let y1 = point.y
         let z1 = point.z
@@ -157,7 +157,7 @@ struct LatLon : CustomStringConvertible {
         return Vector(x: x2, y: y2, z: z2)
     }
     
-    static func parseLatLon(stringToParse val: String) throws -> LatLon {
+    public static func parseLatLon(stringToParse val: String) throws -> LatLon {
         guard var idx = val.index(of: ",") else{
             throw LatLonError.parseError("Invalid string")
         }

@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Coordinates
 
 class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelegate {
     

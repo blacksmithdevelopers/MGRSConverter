@@ -9,11 +9,14 @@
 import Foundation
 
 extension LatLon {
-    func toUTM() throws -> Utm {
-        if !(-80 <= self.lat && self.lat <= 84)
-        {
+    public func toUTM() throws -> Utm {
+        guard self.lat >= -80 && self.lat <= 84 else {
             throw UtmError.badLatLon("Outside UTM Limits")
         }
+//        if !(-80 <= self.lat && self.lat <= 84)
+//        {
+//
+//        }
         
         let falseEasting: Double = 500e3
         let falseNorthing: Double = 10_000e3

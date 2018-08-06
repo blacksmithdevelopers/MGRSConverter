@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Ellipsoid {
+public enum Ellipsoid {
     case WGS84
     case Airy1830
     case AiryModified
@@ -19,7 +19,7 @@ enum Ellipsoid {
     case Intl1924
     case WGS72
     
-    var a: Double {
+    public var a: Double {
         switch self {
         case .WGS84:
             return 6378137
@@ -42,7 +42,7 @@ enum Ellipsoid {
         }
     }
     
-    var b: Double {
+    public var b: Double {
         switch self{
         case .WGS84:
             return 6356752.314245
@@ -65,7 +65,7 @@ enum Ellipsoid {
         }
     }
     
-    var f: Double {
+    public var f: Double {
         switch self{
         case .WGS84:
             return 1/298.257223563

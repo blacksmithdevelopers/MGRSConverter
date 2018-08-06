@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum MgrsError: Error{
+public enum MgrsError: Error{
     case invalidBand(String)
     case invalidZone(String)
     case invalidEasting(String)
@@ -17,16 +17,16 @@ enum MgrsError: Error{
     case invalidFormat(String)
 }
 
-struct Mgrs: CustomStringConvertible {
+public struct Mgrs: CustomStringConvertible {
     
     static let latBands: String = "CDEFGHJKLMNPQRSTUVWXX"
     static let e100kLetters: [String] = [ "ABCDEFGH", "JKLMNPQR", "STUVWXYZ"]
     static let n100kLetters: [String] = ["ABCDEFGHJKLMNPQRSTUV", "FGHJKLMNPQRSTUVABCDE"]
     
-    var description: String {
+    public var description: String {
         return self.toString()
     }
-    var zone: Int {
+    public var zone: Int {
         didSet (oldValue) {
             if zone < 0 || zone > 60 {
                 zone = oldValue
@@ -50,7 +50,7 @@ struct Mgrs: CustomStringConvertible {
         }
     }
     
-    init(zone: Int, band: Character, e100k: Character, n100k: Character, easting: Double, northing: Double, datum: Datum) throws {
+    public init(zone: Int, band: Character, e100k: Character, n100k: Character, easting: Double, northing: Double, datum: Datum) throws {
         guard let _ = Mgrs.latBands.index(of: Character(String(band).uppercased())) else {
             throw MgrsError.invalidBand("Invalid band provided")
         }
@@ -70,7 +70,7 @@ struct Mgrs: CustomStringConvertible {
         self.datum = getDatum(targetDatum: datum)
     }
     
-    func toUTM() throws -> Utm {
+    public func toUTM() throws -> Utm {
         let zone = self.zone
         let band = self.band
         let e100k = self.e100k
@@ -118,7 +118,7 @@ struct Mgrs: CustomStringConvertible {
         return try Utm(zone: zone, hemisphere: hemisphere, easting: (e100kNum + easting), northing: (n2m + n100kNum + northing), datum: self.datum)
     }
     
-    static func parse(fromString: String) throws -> Mgrs {
+    public static func parse(fromString: String) throws -> Mgrs {
         var mgrsString = fromString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         var regex = try! NSRegularExpression(pattern: "\\s")
         var matches = regex.matches(in: mgrsString, options: [], range: NSMakeRange(0, mgrsString.count))
@@ -139,7 +139,10 @@ struct Mgrs: CustomStringConvertible {
             
             let grid = mgrsString[nIdx..<mgrsString.endIndex]
             
-            if (grid.count % 2 != 0){
+//            if (grid.count % 2 != 0){
+//                throw MgrsError.invalidGrid("Grid provided has an odd number of digits")
+//            }
+            guard (grid.count % 2 == 0) else {
                 throw MgrsError.invalidGrid("Grid provided has an odd number of digits")
             }
             let half = grid.count / 2
@@ -193,18 +196,18 @@ struct Mgrs: CustomStringConvertible {
         while (newGrid <= 100_000){
             newGrid *= 10
         }
-        if newGrid>=100_000{
+        if newGrid >= 100_000{
             newGrid /= 10
         }
         
         return newGrid
     }
     
-    func toString() -> String{
+    public func toString() -> String{
         return self.toString(precision: 5)
     }
     
-    func toString(precision: UInt) -> String{
+    public func toString(precision: UInt) -> String{
         let stringFormat = "%0\(precision).0f"
         
         let zoneFormatted = String(format: "%02d", self.zone)
